@@ -95,7 +95,7 @@ $('clean-link').addEventListener('change', () => {
   updateControls(); persist();
 });
 $('reset-draft').addEventListener('click', () => {
-  if (!source || !window.confirm('Replace your edits with the original title, selected passage, and link?')) return;
+  if (!source || !window.confirm('Replace your edits with the selected passage, original title, and link?')) return;
   $('post').value = composeText(source, { ...settings, cleanLinks: $('clean-link').checked });
   notice('Draft reset.'); updateControls(); persist();
 });

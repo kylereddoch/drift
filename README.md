@@ -2,9 +2,9 @@
 
 Share a page, a passage, a good find.
 
-**Highlight text in an article, click the Drift toolbar icon, and an editable draft opens with the page title, your selected passage, and the URL.** Choose a saved Mastodon server, add your thoughts, and continue to that server’s composer to review and publish.
+**Highlight text in an article, click the Drift toolbar icon, and an editable draft opens with your selected passage first, followed by the page title and URL.** Choose a saved Mastodon server, add your thoughts, and continue to that server’s composer to review and publish.
 
-Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 0.1.1 is a local preview, not a published Chrome Web Store release.
+Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 0.1.2 is a local preview, not a published Chrome Web Store release.
 
 ## Try the local preview
 
@@ -60,7 +60,7 @@ On Linux CI, use `npx playwright install --with-deps chromium`. There is no buil
 - `npm test` checks URL safety, quote composition, cleanup, validation, settings, and capture behavior.
 - `npm run test:browser` runs the installed extension in isolated Chromium, including the real toolbar action, storage, server selection, composer handoff, themes, and accessibility.
 - `npm run icons` regenerates the committed PNGs from the original vector mark.
-- `npm run package` creates `dist/drift-0.1.1.zip` with the manifest at the ZIP root. No development files or dependencies are included.
+- `npm run package` creates `dist/drift-0.1.2.zip` with the manifest at the ZIP root. No development files or dependencies are included.
 
 If using a custom browser download directory, set `PLAYWRIGHT_BROWSERS_PATH` to the same path for installation and tests. This local checkout uses `.cache/browsers` (ignored by Git).
 

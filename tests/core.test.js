@@ -24,10 +24,10 @@ test('link cleanup removes known tags, preserving functional parameters, fragmen
   assert.equal(cleanURL('https://example.com/?q=hi%20there&x=%ZZ'), 'https://example.com/?q=hi%20there&x=%ZZ');
 });
 
-test('highlighted text, title, and URL appear together without truncation or escaping loss', () => {
+test('highlighted text comes before the title and URL without truncation or escaping loss', () => {
   const source = { title: 'A story & a thought', selection: 'Line one.\nLine two: “yes” & #hello 🐘', url: 'https://example.com/story?utm_source=email&story=42' };
   const text = composeText(source, { includeTitle: true, cleanLinks: true });
-  assert.equal(text, 'A story & a thought\n\n“Line one.\nLine two: “yes” & #hello 🐘”\n\nhttps://example.com/story?story=42');
+  assert.equal(text, '“Line one.\nLine two: “yes” & #hello 🐘”\n\nA story & a thought\n\nhttps://example.com/story?story=42');
   const url = new URL(shareURL('mastodon.social', text));
   assert.equal(url.origin, 'https://mastodon.social');
   assert.equal(url.pathname, '/share');
@@ -38,6 +38,8 @@ test('highlighted text, title, and URL appear together without truncation or esc
 test('title and cleanup settings are respected; link sharing does not invent a title', () => {
   const source = { title: 'Title', url: 'https://example.com/?utm_medium=link', selection: '' };
   assert.equal(composeText(source, { includeTitle: false, cleanLinks: false }), source.url);
+  assert.equal(composeText(source), 'Title\n\nhttps://example.com/');
+  assert.equal(composeText({ ...source, selection: '  Selected passage.  ' }, { includeTitle: false, cleanLinks: true }), '“Selected passage.”\n\nhttps://example.com/');
   assert.equal(composeText({ url: source.url }), 'https://example.com/');
 });
 

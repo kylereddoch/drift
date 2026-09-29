@@ -85,10 +85,10 @@ test('context draft edits, cleanup reversal, recovery, copy, and encoded Mastodo
   const page = await context.newPage();
   await page.goto(`${base}/popup.html?draft=${id}`);
   const text = page.getByRole('textbox', { name: 'Post text' });
-  await expect(text).toHaveValue(`${source.title}\n\n“${source.selection}”\n\nhttps://news.example/story?id=42#read`);
+  await expect(text).toHaveValue(`“${source.selection}”\n\n${source.title}\n\nhttps://news.example/story?id=42#read`);
   await expect(page.getByText('Passage included', { exact: true })).toBeVisible();
   await page.getByLabel('Remove known tracking tags', { exact: true }).uncheck();
-  await expect(text).toHaveValue(`${source.title}\n\n“${source.selection}”\n\n${source.url}`);
+  await expect(text).toHaveValue(`“${source.selection}”\n\n${source.title}\n\n${source.url}`);
   await text.fill(`${await text.inputValue()}\n\nMy own thoughts & #OpenWeb 🐘`);
   const draft = await text.inputValue();
   await expect.poll(async () => worker.evaluate(async id => (await chrome.storage.session.get(`draft:context:${id}`))[`draft:context:${id}`].text, id)).toBe(draft);
@@ -103,6 +103,10 @@ test('context draft edits, cleanup reversal, recovery, copy, and encoded Mastodo
   await page.bringToFront();
   await page.getByRole('button', { name: 'Copy', exact: true }).click();
   await expect(page.getByRole('status')).toContainText(/Copied|draft is selected/);
+  page.once('dialog', dialog => dialog.accept());
+  await page.getByRole('button', { name: 'Reset draft', exact: true }).click();
+  await expect(text).toHaveValue(`“${source.selection}”\n\n${source.title}\n\n${source.url}`);
+  await expect(page.getByRole('status')).toContainText('Draft reset.');
   await page.close();
 });
 
@@ -120,13 +124,13 @@ test('real toolbar gesture captures the highlighted passage and opens the extens
   await browserCdp.send('Extensions.triggerAction', { id: extensionId, targetId: target.targetId });
   // Chrome exposes a toolbar popup as an extension target, not a Playwright Page.
   await expect.poll(async () => worker.evaluate(() => chrome.runtime.getContexts({ contextTypes: ['POPUP'] }))).not.toEqual([]);
-  await expect.poll(async () => worker.evaluate(async id => (await chrome.storage.session.get(`draft:tab:${id}`))[`draft:tab:${id}`]?.text, tabId)).toBe('The quiet web\n\n“Worth reading. Worth passing along.”\n\nhttps://article.example/story');
+  await expect.poll(async () => worker.evaluate(async id => (await chrome.storage.session.get(`draft:tab:${id}`))[`draft:tab:${id}`]?.text, tabId)).toBe('“Worth reading. Worth passing along.”\n\nThe quiet web\n\nhttps://article.example/story');
   const popupTargets = await browserCdp.send('Target.getTargets', { filter: [{}] });
   const popupTarget = popupTargets.targetInfos.find(item => item.url === `${base}/popup.html`);
   expect(popupTarget).toBeTruthy();
   const session = await popupSession(browserCdp, popupTarget.targetId);
   const view = await session.send('Runtime.evaluate', { expression: '({ text: document.querySelector("#post").value, height: document.body.scrollHeight, width: document.body.scrollWidth })', returnByValue: true });
-  expect(view.result.value.text).toBe('The quiet web\n\n“Worth reading. Worth passing along.”\n\nhttps://article.example/story');
+  expect(view.result.value.text).toBe('“Worth reading. Worth passing along.”\n\nThe quiet web\n\nhttps://article.example/story');
   expect(view.result.value.height).toBeLessThanOrEqual(600);
   expect(view.result.value.width).toBe(430);
   await expect.poll(async () => (await session.send('Runtime.evaluate', { expression: 'document.querySelector(".composer-footer").getBoundingClientRect().bottom <= innerHeight', returnByValue: true })).result.value).toBe(true);
@@ -159,7 +163,7 @@ test('context action opens a separate draft, supports server changes, and cleans
     await openContextDraft({ menuItemId: 'drift-selection', pageUrl: 'https://news.example/context', selectionText: 'A selected passage.' }, { title: 'Context article' });
   });
   const page = await opened;
-  await expect(page.getByRole('textbox', { name: 'Post text' })).toHaveValue('Context article\n\n“A selected passage.”\n\nhttps://news.example/context');
+  await expect(page.getByRole('textbox', { name: 'Post text' })).toHaveValue('“A selected passage.”\n\nContext article\n\nhttps://news.example/context');
   const id = new URL(page.url()).searchParams.get('draft');
   await worker.evaluate(() => chrome.storage.local.set({ settings: { servers: ['https://social.example', 'https://other.example'], defaultServer: 'https://social.example' } }));
   await page.getByLabel('Share to', { exact: true }).selectOption('https://other.example');

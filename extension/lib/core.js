@@ -59,7 +59,7 @@ export function composeText(source, settings = DEFAULT_SETTINGS) {
   const url = settings.cleanLinks ? cleanURL(source.url) : pageURL(source.url);
   const title = settings.includeTitle ? String(source.title ?? '').trim() : '';
   const quote = String(source.selection ?? '').trim();
-  return [title, quote ? `“${quote}”` : '', url].filter(Boolean).join('\n\n');
+  return [quote ? `“${quote}”` : '', title, url].filter(Boolean).join('\n\n');
 }
 
 export function shareURL(server, text) {

@@ -8,7 +8,7 @@ The extension is plain HTML, CSS, and JavaScript modules. There is no bundler or
 
 The toolbar action has `popup.html` as its default popup. An explicit toolbar click or `_execute_action` keyboard shortcut grants temporary `activeTab` access. The popup queries the active tab, then runs one packaged selection reader in that tab’s main frame using `chrome.scripting.executeScript`. It collects only `window.getSelection().toString()`; it does not scrape the page body. The tab API supplies title and URL.
 
-Default composition is page title, a blank line, the quoted selection, a blank line, and the shareable URL. An empty selection is omitted. All editable text stays literal; page-derived strings are assigned via textContent, form values, or text nodes, never HTML interpolation.
+Default composition is the quoted selection, a blank line, the page title, a blank line, and the shareable URL. An empty selection is omitted; without a highlight, the title comes first. Disabling title inclusion leaves the quote and URL. All editable text stays literal; page-derived strings are assigned via textContent, form values, or text nodes, never HTML interpolation.
 
 The service worker registers its install, context-menu, and tab-close listeners at top level. It opens the welcome page on first install only. Context-menu inputs become session drafts keyed by random UUIDs; draft tabs receive only that opaque ID, not article text, in their extension URL. Toolbar drafts are keyed by source tab ID and reused only for the same source and selection. Closed-tab cleanup is driven by `tabs.onRemoved`. Required state resides in storage, not worker globals.
 

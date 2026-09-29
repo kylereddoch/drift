@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 — 2026-09-29 (local preview)
+
+### Changed
+
+- Put the highlighted passage before the article title and URL in new and reset drafts, including toolbar and right-click sharing.
+- Updated the welcome-page example to match the new order. Sharing without a selection still starts with the title, and recovered edits keep their existing text.
+
 ## 0.1.1 — 2026-09-29 (local preview)
 
 ### Changed
