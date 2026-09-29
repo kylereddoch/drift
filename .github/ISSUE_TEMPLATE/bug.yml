@@ -1,0 +1,33 @@
+name: Report a bug
+description: Tell us what went wrong in Drift.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Use public sample pages. Do not include private URLs, highlighted confidential text, passwords, or tokens."
+  - type: input
+    id: version
+    attributes:
+      label: Drift and Chrome versions
+      placeholder: "Drift 0.1.0, Chrome 153, Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include a public sample URL only if it helps reproduce the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+    validations:
+      required: true

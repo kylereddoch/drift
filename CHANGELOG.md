@@ -1,0 +1,18 @@
+# Changelog
+
+## 0.1.0 — 2026-09-29 (local preview)
+
+### Added
+
+- Toolbar popup with an editable draft containing the current page title, highlighted passage, and URL.
+- Mastodon server selection, multiple saved servers, and a default server.
+- Optional removal of known tracking parameters, with restoration of the original link.
+- Temporary draft recovery within the browser session and explicit data-clearing controls.
+- Right-click sharing for pages, links, and selected text.
+- A customizable keyboard shortcut and draft copying.
+- Welcome page with setup, instructions, help, release notes, changelog links, and donation options.
+- Light/dark styling, keyboard support, and accessibility checks.
+- Manifest V3 service worker, minimum necessary permissions, and no runtime dependencies or telemetry.
+- Privacy policy, test suite, pinned CI tools, dependency updates, and release ZIP packaging.
+
+This entry describes the initial local implementation. GitHub publication and Chrome Web Store submission are pending.

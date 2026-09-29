@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" class="popup-root">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Share with Drift</title><link rel="stylesheet" href="styles.css"><script type="module" src="popup.js"></script>
+</head>
+<body class="popup">
+  <main class="composer">
+    <header class="composer-header">
+      <a class="brand" href="welcome.html" target="_blank"><img src="icons/drift.svg" alt="" width="32" height="32"><span>drift<span class="brand-dot">.</span></span></a>
+      <a href="welcome.html" target="_blank" class="text-link">Settings &amp; help <span aria-hidden="true">↗</span></a>
+    </header>
+    <div class="composer-intro"><h1>Share a little of your world.</h1></div>
+    <p id="status" class="notice" role="status" aria-live="polite" hidden></p>
+    <form id="share-form">
+      <div class="source-line"><span class="source-dot" aria-hidden="true"></span><span id="source-host">Your current page</span><span id="quote-badge" class="tag" hidden>Passage included</span></div>
+      <label class="sr-only" for="post">Post text</label>
+      <textarea id="post" rows="6" spellcheck="true" placeholder="Your draft will appear here…" aria-describedby="count-info" disabled></textarea>
+      <div id="count-info" class="editor-meta"><span id="count">0 characters</span><span>Your server sets the post limit</span></div>
+      <div class="clean-row"><label class="check"><input id="clean-link" type="checkbox"> Remove known tracking tags</label><button id="reset-draft" class="link-button" type="button" disabled>Reset draft</button></div>
+      <label for="server" class="field-label">Share to</label>
+      <div class="server-row"><select id="server" aria-describedby="server-help" required disabled><option value="">Add your Mastodon server</option></select><a class="button button-small button-secondary" href="welcome.html#setup" target="_blank" aria-label="Manage Mastodon servers">Manage</a></div>
+      <p id="server-help" class="fine">Uses the account signed in on this server.</p>
+      <div class="compose-actions"><button id="share" class="button button-primary" type="submit" disabled>Continue to Mastodon <span aria-hidden="true">↗</span></button><button id="copy" class="button button-secondary" type="button" disabled>Copy</button></div>
+      <p class="handoff-note">You’ll review and publish on Mastodon. Opening its composer sends this draft to your chosen server.</p>
+    </form>
+    <footer class="composer-footer"><span>Made for the open web.</span><a href="privacy.html" target="_blank">Privacy</a></footer>
+  </main>
+</body>
+</html>

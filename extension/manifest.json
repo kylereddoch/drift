@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Drift — Share to Mastodon",
+  "short_name": "Drift",
+  "version": "0.1.0",
+  "description": "Share a page or highlighted passage to Mastodon, with its title and link. Edit your draft and choose your server before sharing.",
+  "minimum_chrome_version": "120",
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "Share with Drift",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png" }
+  },
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "options_ui": { "page": "welcome.html", "open_in_tab": true },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+M", "mac": "Alt+Shift+M" },
+      "description": "Share the current page with Drift"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; connect-src 'none'; form-action 'none'; frame-ancestors 'none'"
+  }
+}
