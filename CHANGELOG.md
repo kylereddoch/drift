@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0 — 2026-09-29 (Chrome Web Store submission build)
+
+### Changed
+
+- Prepared the first store release, with the highlighted passage before the title and URL.
+- Replaced developer-preview wording in the welcome page with current release features.
+- Added the public project homepage to the manifest.
+- Sized the 128px store icon with Google's recommended transparent padding; toolbar icons retain their original size.
+- Added reproducible store screenshots, promotional artwork, listing copy, permission explanations, and reviewer instructions.
+
+This build is ready for upload. Store submission, approval, and publication have not been confirmed.
+
 ## 0.1.2 — 2026-09-29 (developer preview)
 
 ### Changed
@@ -33,4 +45,4 @@
 - Manifest V3 service worker, minimum necessary permissions, and no runtime dependencies or telemetry.
 - Privacy policy, test suite, pinned CI tools, dependency updates, and release ZIP packaging.
 
-These entries describe the initial preview implementation. The source and v0.1.2 developer preview are published on GitHub. Chrome Web Store submission is pending.
+The 0.1.x entries describe the initial previews. The source and v0.1.2 developer preview are published on GitHub.

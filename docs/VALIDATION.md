@@ -1,4 +1,20 @@
-# Local validation — 0.1.2
+# Validation
+
+## 1.0.0 — Chrome Web Store submission build
+
+Validated September 29, 2026 on Windows using the existing Node.js 24 / Playwright 1.63.0 toolchain.
+
+- `npm run verify` passed: manifest/permission/resource/syntax checks, 10 logic tests, 7 browser tests, accessibility checks, and ZIP validation.
+- No sharing logic or permissions changed from the tested 0.1.2 preview. The build changes version/preview wording, adds the public homepage, and pads the 128px store icon according to Google's guidance.
+- `npm run store` loaded the actual packaged ZIP in an isolated browser and captured five 1280×800 screenshots. It also rendered 440×280 and 1400×560 promotional artwork. Dimensions and opaque RGB PNG formats were checked. The 128px icon retains transparent padding.
+- Store screenshots use original sample text and example URLs; network requests were blocked while capturing them. No personal browser profile or real Mastodon account was used.
+- Extension ZIP: 19 files, 26,213 bytes. SHA-256: `4862b16359a361d0c928a431cfbc62de9a6055e85facb84089bd6483a204018c`.
+- Official store preparation, images, privacy, listing, and submission documentation was checked. Listing copy explicitly discloses chosen-page URLs/titles, website content, local drafts, and user-initiated server handoff.
+- Browser control of the open developer dashboard returned "The extensions gallery cannot be scripted." Upload, submission, and approval are not confirmed.
+
+The existing test boundary remains: automated Mastodon handoffs use intercepted destinations. Tests do not sign in to or publish from a real account.
+
+## 0.1.2 — previous developer preview
 
 Validated September 29, 2026, on Windows with Node.js 24.18.0, Playwright 1.63.0, and its Chromium 153.0.8010.12 build.
 

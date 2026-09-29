@@ -4,7 +4,7 @@ Share a page, a passage, a good find.
 
 **Highlight text in an article, click the Drift toolbar icon, and an editable draft opens with your selected passage first, followed by the page title and URL.** Choose a saved Mastodon server, add your thoughts, and continue to that server’s composer to review and publish.
 
-Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 0.1.2 is a developer preview. Chrome Web Store publication is pending developer verification and store review.
+Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 1.0.0 is prepared for Chrome Web Store submission; submission and approval have not yet been confirmed.
 
 [Website](https://kylereddoch.github.io/drift/) · [Download the developer preview](https://github.com/kylereddoch/drift/releases/tag/v0.1.2) · [Privacy policy](https://kylereddoch.github.io/drift/privacy.html)
 
@@ -62,7 +62,8 @@ On Linux CI, use `npx playwright install --with-deps chromium`. There is no buil
 - `npm test` checks URL safety, quote composition, cleanup, validation, settings, and capture behavior.
 - `npm run test:browser` runs the installed extension in isolated Chromium, including the real toolbar action, storage, server selection, composer handoff, themes, and accessibility.
 - `npm run icons` regenerates the committed PNGs from the original vector mark.
-- `npm run package` creates `dist/drift-0.1.2.zip` with the manifest at the ZIP root. No development files or dependencies are included.
+- `npm run package` creates `dist/drift-1.0.0.zip` with the manifest at the ZIP root. No development files or dependencies are included.
+- `npm run store` packages the extension and creates `dist/chrome-web-store-1.0.0/` with the ZIP, store icon, five screenshots, promotional images, checksums, and ready-to-paste submission text. Screenshots come from the actual ZIP in an isolated browser. See the [store upload guide](docs/STORE-LISTING.md).
 
 If using a custom browser download directory, set `PLAYWRIGHT_BROWSERS_PATH` to the same path for installation and tests. This local checkout uses `.cache/browsers` (ignored by Git).
 
@@ -75,7 +76,8 @@ extension/          Loadable, self-contained Manifest V3 extension
   lib/              URL, settings, selection, and draft helpers
   icons/            Original SVG and browser-sized PNGs
 tests/              Logic and real-browser tests
-scripts/            Validation, icon generation, ZIP packaging
+scripts/            Validation, icon generation, ZIP and store-kit packaging
+store/              Original promotional artwork source
 docs/               Architecture, source references, release preparation
 .github/            CI, dependency updates, funding, and issue forms
 ```

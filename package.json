@@ -1,6 +1,6 @@
 {
   "name": "drift-mastodon",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "private": true,
   "description": "Share a page, a passage, a good find. A privacy-conscious Mastodon sharing extension.",
   "type": "module",
@@ -13,6 +13,7 @@
     "check": "node scripts/check.mjs",
     "icons": "node scripts/icons.mjs",
     "package": "node scripts/package.mjs",
+    "store": "node scripts/package.mjs && node scripts/store-assets.mjs",
     "verify": "npm run check && npm test && npm run test:browser && npm run package"
   },
   "devDependencies": {

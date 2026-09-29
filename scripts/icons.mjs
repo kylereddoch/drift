@@ -8,7 +8,10 @@ try {
   await mkdir('extension/icons', { recursive: true });
   for (const size of [16, 32, 48, 128]) {
     await page.setViewportSize({ width: size, height: size });
-    await page.setContent(`<html><body style="margin:0">${svg.replace('width="128" height="128"', `width="${size}" height="${size}"`)}</body></html>`);
+    // The store's square-icon guidance calls for 96px artwork plus 16px padding.
+    const artworkSize = size === 128 ? 96 : size;
+    const padding = size === 128 ? 16 : 0;
+    await page.setContent(`<html><body style="margin:0;padding:${padding}px">${svg.replace('width="128" height="128"', `width="${artworkSize}" height="${artworkSize}"`)}</body></html>`);
     await page.screenshot({ path: resolve(`extension/icons/${size}.png`), omitBackground: true });
   }
 } finally { await browser.close(); }
