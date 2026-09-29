@@ -13,7 +13,7 @@ The site uses GitHub’s domain, with no custom domain or DNS changes. It does n
 
 ## Work on the site
 
-There are no runtime dependencies or build step. Edit `index.html`, `privacy.html`, and `assets/styles.css`. All links and branding are packaged locally; there is no browser extension API code in the website.
+No package installation or build step is needed. Edit `index.html`, `privacy.html`, and `assets/styles.css`. Branding is packaged locally; there is no browser extension API code in the website. Tinylytics is the only externally hosted script.
 
 For a local preview with Node.js 24 or later:
 
@@ -33,7 +33,7 @@ Funding links are Ko-fi, Buy Me a Coffee, then GitHub Sponsors. The GitHub Spons
 
 ## Privacy
 
-The site has no analytics script, cookies of its own, or storage. GitHub Pages records visitor IP addresses for security. Author-website links have static `utm_source=drift&utm_medium=website` tags, which distinguish them from links clicked inside the extension. See `privacy.html` for the complete disclosure.
+Both public HTML pages load the deferred Tinylytics embed `https://tinylytics.app/embed/4pKqZQnKtz8i-yQCyZmX.js` to measure website visits and referral sources. This is separate from the extension, which contains no analytics script. Tinylytics does not use tracking cookies; its optional ignore setting can store a local preference. GitHub Pages records visitor IP addresses for security. Author-website links have static `utm_source=drift&utm_medium=website` tags, which distinguish them from links clicked inside the extension. See `privacy.html` for the complete disclosure.
 
 ## License
 

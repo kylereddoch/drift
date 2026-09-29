@@ -7,6 +7,10 @@ Validated September 29, 2026 using Node.js 24.18.0 and Chromium supplied by Play
 - The download link targets the published `v0.1.2` ZIP, and the donation options appear in Ko-fi, Buy Me a Coffee, GitHub order.
 - axe WCAG A/AA checks found no violations on the homepage in light and dark mode or on the privacy page.
 - The 390px mobile layout had no horizontal overflow. Desktop and mobile screenshots were visually inspected.
-- The browser reported no page errors. The site contains no scripts or Chrome extension API dependencies.
+- The browser reported no page errors. At initial publication the site contained no scripts or Chrome extension API dependencies. Tinylytics was added later on September 29; see the update below.
 
 These automated checks are not a claim of complete accessibility conformance. Chrome Web Store publication is still pending.
+
+## Tinylytics website update — September 29, 2026
+
+The owner supplied the Tinylytics embed for this site. It is included once, with defer, in the homepage and public privacy page. Static checks confirmed the exact script URL and single inclusion on both pages. The embed endpoint returned HTTP 200 with a JavaScript content type. The website privacy disclosure and README explain this analytics integration. The extension source and store submission package are unchanged.
