@@ -116,14 +116,10 @@
   .section-symbol { color:var(--accent); font-size:25px; display:block; margin-bottom:20px; }
   .release-label { margin-bottom:7px; }
   .release-list { padding-left:16px; color:var(--muted); margin:0 0 20px; line-height:1.8; }
-  .support-links { display:grid; gap:11px; margin-bottom:16px; }
+  .support-links { display:grid; gap:11px; }
   .details-grid article.support-card { align-self:start; padding:24px; background:var(--tint); border:1px solid var(--accent); border-top:4px solid var(--accent); border-radius:14px; }
   .support-emblem { display:grid; place-items:center; width:42px; height:42px; color:var(--accent); background:var(--surface); border:1px solid var(--line); border-radius:12px; font-size:28px; line-height:1; margin-bottom:19px; }
-  .support-card .eyebrow { color:var(--accent); font-size:8px; letter-spacing:.1em; margin-bottom:12px; line-height:1.7; }
   .support-card .support-links .button { width:100%; padding:11px 10px; gap:8px; white-space:normal; text-align:center; }
-  .support-card .coffee-link { text-align:center; }
-  .support-card .support-credit { padding-top:14px; margin:0; border-top:1px solid var(--line); font-size:11px; }
-  .support-card .support-credit a { font-size:11px; }
   .privacy-strip { display:grid; grid-template-columns:1fr auto; gap:15px 40px; padding:27px; background:var(--soft); border-radius:13px; margin:0 0 40px; }
   .privacy-strip h2 { font-size:17px; margin-bottom:10px; }
   .privacy-strip p { font-size:12px; color:var(--muted); margin-bottom:7px; }

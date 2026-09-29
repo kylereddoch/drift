@@ -5,7 +5,8 @@
 ### Changed
 
 - Added a prominent Support Drift navigation button, an emphasized donation card, and a compact support link in the sharing popup.
-- Corrected the author’s website to `https://kylereddoch.me/` and added author links to the donation card and popup.
+- Styled all donation options as buttons in Ko-fi, Buy Me a Coffee, then GitHub order. Moved the maintainer credit into the footer.
+- Corrected the author’s website to `https://kylereddoch.me/` in the footer and popup.
 - Added fixed `utm_source=drift` and `utm_medium=extension` tags to author-website links so the site’s existing Tinylytics installation can attribute visits from Drift.
 - Updated privacy disclosures to explain click-through attribution. No background analytics, tracking pixel, remote code, or additional permission was added to the extension.
 

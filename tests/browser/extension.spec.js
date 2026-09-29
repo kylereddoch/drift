@@ -226,7 +226,7 @@ test('support links are discoverable and website attribution requires a click wi
     for (const link of await page.locator('[data-link="website"]').all()) await expect(link).toHaveAttribute('href', website);
     expect(requests).toEqual([]);
     const fromWelcome = context.waitForEvent('page');
-    await card.getByRole('link', { name: 'Visit kylereddoch.me' }).click();
+    await page.locator('.site-footer').getByRole('link', { name: 'Kyle Reddoch' }).click();
     const visit = await fromWelcome;
     await visit.waitForURL(website);
     await visit.close();
