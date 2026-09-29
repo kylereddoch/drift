@@ -6,10 +6,12 @@ Share a page, a passage, a good find.
 
 Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 0.1.2 is a developer preview. Chrome Web Store publication is pending developer verification and store review.
 
-## Try the local preview
+[Website](https://kylereddoch.github.io/drift/) · [Download the developer preview](https://github.com/kylereddoch/drift/releases/tag/v0.1.2) · [Privacy policy](https://kylereddoch.github.io/drift/privacy.html)
+
+## Try the developer preview
 
 1. Open `chrome://extensions` in Chrome and turn on **Developer mode**.
-2. Clone or download this repository. Click **Load unpacked**, then select its `extension` folder.
+2. Download and extract the [preview ZIP](https://github.com/kylereddoch/drift/releases/download/v0.1.2/drift-0.1.2.zip). Click **Load unpacked**, then select the extracted folder containing `manifest.json`. If you cloned the source repository instead, select its `extension` folder.
 3. The welcome page opens. Add the HTTPS server address you use to sign in to Mastodon, such as `mastodon.social`.
 4. Pin Drift using Chrome’s puzzle-piece Extensions menu.
 5. Open an article, highlight a passage, and click Drift. Review the draft and select **Continue to Mastodon**.
@@ -63,6 +65,8 @@ On Linux CI, use `npx playwright install --with-deps chromium`. There is no buil
 - `npm run package` creates `dist/drift-0.1.2.zip` with the manifest at the ZIP root. No development files or dependencies are included.
 
 If using a custom browser download directory, set `PLAYWRIGHT_BROWSERS_PATH` to the same path for installation and tests. This local checkout uses `.cache/browsers` (ignored by Git).
+
+The public website is maintained separately on the [`gh-pages` branch](https://github.com/kylereddoch/drift/tree/gh-pages), in its own local checkout. The extension lives on `main`.
 
 ## Project structure
 

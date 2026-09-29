@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.2 — 2026-09-29 (local preview)
+## 0.1.2 — 2026-09-29 (developer preview)
 
 ### Changed
 
@@ -33,4 +33,4 @@
 - Manifest V3 service worker, minimum necessary permissions, and no runtime dependencies or telemetry.
 - Privacy policy, test suite, pinned CI tools, dependency updates, and release ZIP packaging.
 
-This entry describes the initial local implementation. GitHub publication and Chrome Web Store submission are pending.
+These entries describe the initial preview implementation. The source and v0.1.2 developer preview are published on GitHub. Chrome Web Store submission is pending.

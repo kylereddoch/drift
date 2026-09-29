@@ -8,16 +8,18 @@
 - Test a highlighted article in current retail Chrome, a logged-out Mastodon handoff, and the logged-in composer. Confirm the account, text, title, URL, audience, and posting limit. Publishing a real test post is optional and requires the account owner’s approval.
 - Confirm `dist/drift-VERSION.zip` contains a root manifest, packaged assets, and license; no node_modules, test artifacts, secrets, or developer profile.
 
-## First GitHub publication (pending)
+## GitHub publication
 
-The intended repository is `kylereddoch/drift`, local directory `D:\Github Repos\drift`. No remote or push is performed by the development scripts.
+Published September 29, 2026: [kylereddoch/drift](https://github.com/kylereddoch/drift), local extension directory `D:\Github Repos\drift`.
 
-1. Confirm the repository name is available under Kyle’s account and create the public repository when authorized.
-2. Review and commit the source, documentation, icons, package lock, and `.github` files. Add the verified remote and push `main`.
-3. Verify the help and changelog URLs in `extension/lib/links.js`, README, privacy policy, and support docs.
-4. Confirm GitHub Issues, the MIT license, private vulnerability reporting, and the CI workflow are enabled. Check the first CI run on GitHub; local checks do not verify hosted Linux CI.
-5. Verify **Settings → General → Features → Sponsorships**, the Sponsor button, and its GitHub Sponsors, Ko-fi, and Buy Me a Coffee destinations. `.github/FUNDING.yml` is already populated from existing projects; this does not enroll a person in GitHub Sponsors.
-6. Replace the welcome page’s “Local preview” status when publishing a release, and link to the real release. The changelog remains accessible from GitHub.
+- `main` contains the extension, tests, issue forms, changelog, and MIT license.
+- [v0.1.2](https://github.com/kylereddoch/drift/releases/tag/v0.1.2) is a GitHub prerelease with the verified extension ZIP. It is not a Chrome Web Store release.
+- Sponsorships are enabled with Kyle’s GitHub Sponsors, Ko-fi, and Buy Me a Coffee destinations, matching existing projects. GitHub confirmed the account already has a Sponsors listing.
+- GitHub Issues and private vulnerability reporting are enabled.
+- The first hosted Linux verification run passed: [Verify Drift](https://github.com/kylereddoch/drift/actions/runs/36603828920).
+- The website uses `gh-pages`, checked out separately at `D:\Github Repos\drift-website`, and GitHub Pages at `https://kylereddoch.github.io/drift/`. No custom domain is configured.
+
+For subsequent previews, run the checks, push the reviewed commit, confirm its hosted verification run, and attach the generated ZIP to a matching prerelease tag. The development scripts do not push or publish automatically.
 
 See [GitHub’s sponsor-button guide](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository).
 
@@ -26,7 +28,7 @@ See [GitHub’s sponsor-button guide](https://docs.github.com/en/repositories/ma
 Review the current [publish guide](https://developer.chrome.com/docs/webstore/publish) and [program policies](https://developer.chrome.com/docs/webstore/program-policies/) at submission time.
 
 - Use a registered Chrome Web Store developer account. Any registration/payment, policy attestations, and submission decisions belong to the owner.
-- Upload the verified ZIP and prepare accurate screenshots, the required store artwork, category, language, support URL, and a publicly hosted privacy policy URL. The packaged privacy HTML alone is not a public URL.
+- Upload the verified ZIP and prepare accurate screenshots, the required store artwork, category, language, and support URL. The public privacy policy is `https://kylereddoch.github.io/drift/privacy.html`; keep it synchronized with the packaged policy.
 - Complete the Privacy practices fields truthfully: Drift handles website content, URLs, selected text, and user-edited drafts locally and transmits a draft to the chosen Mastodon server on command. Author-website links also carry static Drift source tags for the website’s Tinylytics analytics after a click. “No extension usage analytics” does not mean “no data handling.”
 - Explain each permission using README’s table. Single purpose: prepare and hand off a user-selected page or passage to Mastodon.
 - Confirm no remotely hosted code, hidden features, or broader website access has been added.
