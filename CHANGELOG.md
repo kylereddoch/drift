@@ -4,6 +4,7 @@
 
 ### Changed
 
+- Adopted the Rising quotes logo across the toolbar icons, welcome page, composer, and privacy page.
 - Added a prominent Support Drift navigation button, an emphasized donation card, and a compact support link in the sharing popup.
 - Styled all donation options as buttons in Ko-fi, Buy Me a Coffee, then GitHub order. Moved the maintainer credit into the footer.
 - Corrected the author’s website to `https://kylereddoch.me/` in the footer and popup.
