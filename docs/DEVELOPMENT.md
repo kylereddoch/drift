@@ -16,6 +16,14 @@ Settings are local to the browser. Drafts are session-only. Storage errors are s
 
 Share uses the server’s `/share` route with one URL-encoded `text` parameter containing the complete draft. Mastodon owns authentication, audience choice, content warnings, character limits, and publication. Drift never calls the status API or claims to have posted.
 
+## Website referral attribution
+
+The maintainer’s website is `https://kylereddoch.me/`. Its live redirect to `https://www.kylereddoch.me/` was checked on September 29, 2026 and preserves the query string. The live page already loads Tinylytics. Extension author links carry the fixed `utm_source=drift` and `utm_medium=extension` parameters; the website receives them only when a person clicks.
+
+[Tinylytics’ analytics guide](https://tinylytics.app/docs/analytics_guide) documents UTM-tagged links for source/campaign attribution. Look for `drift` in Tinylytics’ traffic source reporting. A visit being attributed is subject to the website script loading, blockers, and the service’s normal filtering. A live dashboard entry has not been asserted during development.
+
+No Tinylytics embed, pixel, event request, API key, or new permission is included in the extension. The existing strict CSP still prevents network fetches and remote images/scripts. These static source tags do not include any page or draft data and are unrelated to article-link cleanup in the sharing editor. Donation links remain direct links to their providers; this implementation does not count donations or clicks to those providers in Tinylytics.
+
 ## Chrome references
 
 | Official reference | Applied in Drift |
@@ -48,7 +56,7 @@ Mastodon does not present the web share page as a status-posting REST endpoint. 
 
 The test browser uses an explicit [virtual screen configuration](https://developer.chrome.com/docs/automation-and-testing/headless-screen-config) so Chrome has room for its full toolbar popup. The default 800×600 headless screen otherwise clamps a popup’s visible height independently of the tested web-page viewport.
 
-Test network routes use reserved `.example` domains. They do not publish or sign in to a real account. Automated accessibility checks use axe for WCAG A/AA rules in light/dark mode, plus viewport checks and visual inspection. Automated accessibility checks are not a claim of full accessibility conformance.
+Test network routes use reserved `.example` domains and locally intercept the author-website destination. They do not publish, sign in to a real account, or send live analytics hits. Automated accessibility checks use axe for WCAG A/AA rules in light/dark mode, plus viewport checks and visual inspection. Automated accessibility checks are not a claim of full accessibility conformance.
 
 Dependencies are development-only, exactly pinned, and committed with `package-lock.json`. GitHub Actions are pinned to reviewed revisions; Dependabot checks npm and Actions weekly after publication. No automatic merging or publishing is configured.
 

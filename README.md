@@ -4,7 +4,7 @@ Share a page, a passage, a good find.
 
 **Highlight text in an article, click the Drift toolbar icon, and an editable draft opens with the page title, your selected passage, and the URL.** Choose a saved Mastodon server, add your thoughts, and continue to that server’s composer to review and publish.
 
-Drift is an independent Chrome extension by Kyle Reddoch. It is not affiliated with Mastodon. Version 0.1.0 is a local preview, not a published Chrome Web Store release.
+Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 0.1.1 is a local preview, not a published Chrome Web Store release.
 
 ## Try the local preview
 
@@ -31,7 +31,7 @@ You publish from Mastodon itself. Drift does not need your password, an API toke
 
 ## Privacy and permissions
 
-Drift has no runtime dependencies, analytics, remotely hosted scripts, backend, persistent website permissions, or browsing-history permission. All executable code ships in the extension.
+Drift has no runtime dependencies, extension usage analytics, remotely hosted scripts, backend, persistent website permissions, or browsing-history permission. All executable code ships in the extension.
 
 | Permission | Why it is needed |
 | --- | --- |
@@ -41,6 +41,8 @@ Drift has no runtime dependencies, analytics, remotely hosted scripts, backend, 
 | `contextMenus` | Offer right-click sharing. |
 
 Settings use `chrome.storage.local`; drafts use `chrome.storage.session`. Drift does not sync either. When you continue to Mastodon, the draft is sent to your server as part of an HTTPS URL, which can appear in browser history and server logs before you publish. Copy uses the system clipboard. See [the full privacy policy](extension/privacy.html).
+
+Author-website links in the extension use `https://kylereddoch.me/?utm_source=drift&utm_medium=extension`. The website’s existing Tinylytics installation can attribute those visits to Drift after someone clicks. The tags are the same for everyone and contain no article URL, selected text, draft contents, server, or user ID. No analytics script or pixel runs inside Drift. This measures website visits from extension links, not extension installs, popup views, shares, donations, or active users.
 
 ## Development
 
@@ -58,7 +60,7 @@ On Linux CI, use `npx playwright install --with-deps chromium`. There is no buil
 - `npm test` checks URL safety, quote composition, cleanup, validation, settings, and capture behavior.
 - `npm run test:browser` runs the installed extension in isolated Chromium, including the real toolbar action, storage, server selection, composer handoff, themes, and accessibility.
 - `npm run icons` regenerates the committed PNGs from the original vector mark.
-- `npm run package` creates `dist/drift-0.1.0.zip` with the manifest at the ZIP root. No development files or dependencies are included.
+- `npm run package` creates `dist/drift-0.1.1.zip` with the manifest at the ZIP root. No development files or dependencies are included.
 
 If using a custom browser download directory, set `PLAYWRIGHT_BROWSERS_PATH` to the same path for installation and tests. This local checkout uses `.cache/browsers` (ignored by Git).
 

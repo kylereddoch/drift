@@ -1,6 +1,9 @@
 import { cleanURL, composeText, pageURL, shareURL, sameSource, characterCount } from './lib/core.js';
 import { getSettings, getDraft, saveDraft } from './lib/storage.js';
 import { captureTab } from './lib/capture.js';
+import { bindLinks } from './lib/links.js';
+
+bindLinks();
 
 const $ = id => document.getElementById(id);
 let settings;

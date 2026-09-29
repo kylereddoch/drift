@@ -205,6 +205,53 @@ test('welcome and composer are accessible in both themes and narrow layouts', as
   await page.close();
 });
 
+test('support links are discoverable and website attribution requires a click without draft data', async () => {
+  const website = 'https://kylereddoch.me/?utm_source=drift&utm_medium=extension';
+  const requests = [];
+  const record = request => {
+    if (/^https:\/\/(?:www\.)?kylereddoch\.me\//.test(request.url()) || new URL(request.url()).hostname === 'tinylytics.app') requests.push(request);
+  };
+  const mockWebsite = route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Website navigation test</title><h1>Local stand-in for Kyle’s website</h1>' });
+  context.on('request', record);
+  await context.route('https://kylereddoch.me/**', mockWebsite);
+  const page = await context.newPage();
+  try {
+    await page.goto(`${base}/welcome.html`);
+    await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Support Drift' }).click();
+    await expect(page).toHaveURL(`${base}/welcome.html#support`);
+    const card = page.locator('#support');
+    await expect(card.getByRole('heading', { name: 'Help keep Drift going.' })).toBeVisible();
+    await expect(card.getByRole('link', { name: 'Sponsor on GitHub' })).toHaveAttribute('href', 'https://github.com/sponsors/kylereddoch');
+    await expect(card.getByRole('link', { name: 'Leave a tip on Ko-fi' })).toHaveAttribute('href', 'https://ko-fi.com/kylereddoch');
+    for (const link of await page.locator('[data-link="website"]').all()) await expect(link).toHaveAttribute('href', website);
+    expect(requests).toEqual([]);
+    const fromWelcome = context.waitForEvent('page');
+    await card.getByRole('link', { name: 'Visit kylereddoch.me' }).click();
+    const visit = await fromWelcome;
+    await visit.waitForURL(website);
+    await visit.close();
+
+    const id = '00000000-0000-4000-8000-000000000008';
+    await worker.evaluate(async id => chrome.storage.session.set({ [`draft:context:${id}`]: { source: { title: 'Private draft title', selection: 'Do not send this to the developer', url: 'https://news.example/private?secret=123' } } }), id);
+    await page.goto(`${base}/popup.html?draft=${id}`);
+    await expect(page.getByRole('textbox', { name: 'Post text' })).toHaveValue(/Do not send this to the developer/);
+    await expect(page.getByRole('link', { name: 'Support Drift' })).toHaveAttribute('href', 'welcome.html#support');
+    await expect(page.getByRole('link', { name: 'By Kyle Reddoch' })).toHaveAttribute('href', website);
+    expect(requests).toHaveLength(1);
+    const fromPopup = context.waitForEvent('page');
+    await page.getByRole('link', { name: 'By Kyle Reddoch' }).click();
+    const popupVisit = await fromPopup;
+    await popupVisit.waitForURL(website);
+    await popupVisit.close();
+    expect(requests.map(request => request.url())).toEqual([website, website]);
+    for (const request of requests) expect(request.headers().referer).toBeUndefined();
+  } finally {
+    await page.close();
+    context.off('request', record);
+    await context.unroute('https://kylereddoch.me/**', mockWebsite);
+  }
+});
+
 test('expired drafts and unsupported pages give useful messages; reset clears saved data', async () => {
   const page = await context.newPage();
   await page.goto(`${base}/popup.html?draft=00000000-0000-4000-8000-000000000099`);
