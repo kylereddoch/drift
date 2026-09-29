@@ -2,7 +2,7 @@
 
 Open **Settings & help** in the popup to revisit the welcome page and common answers.
 
-Once the repository is published, use [GitHub issues](https://github.com/kylereddoch/drift/issues/new/choose) for bugs, questions, and feature ideas. Include Drift’s version, Chrome’s version, the steps you tried, what happened, and what you expected. Use a public sample article when possible. Do not include private URLs, highlighted confidential text, passwords, or tokens.
+Use [GitHub issues](https://github.com/kylereddoch/drift/issues/new/choose) for bugs, questions, and feature ideas. Include Drift’s version, Chrome’s version, the steps you tried, what happened, and what you expected. Use a public sample article when possible. Do not include private URLs, highlighted confidential text, passwords, or tokens.
 
 ## Common problems
 

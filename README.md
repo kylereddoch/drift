@@ -4,12 +4,12 @@ Share a page, a passage, a good find.
 
 **Highlight text in an article, click the Drift toolbar icon, and an editable draft opens with your selected passage first, followed by the page title and URL.** Choose a saved Mastodon server, add your thoughts, and continue to that server’s composer to review and publish.
 
-Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 0.1.2 is a local preview, not a published Chrome Web Store release.
+Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 0.1.2 is a developer preview. Chrome Web Store publication is pending developer verification and store review.
 
 ## Try the local preview
 
 1. Open `chrome://extensions` in Chrome and turn on **Developer mode**.
-2. Click **Load unpacked**, then select this repository’s `extension` folder. On Kyle’s machine: `D:\Github Repos\drift\extension`.
+2. Clone or download this repository. Click **Load unpacked**, then select its `extension` folder.
 3. The welcome page opens. Add the HTTPS server address you use to sign in to Mastodon, such as `mastodon.social`.
 4. Pin Drift using Chrome’s puzzle-piece Extensions menu.
 5. Open an article, highlight a passage, and click Drift. Review the draft and select **Continue to Mastodon**.
@@ -26,7 +26,7 @@ You publish from Mastodon itself. Drift does not need your password, an API toke
 - **Right-click actions.** Share pages, link targets, and selected text. Context-menu drafts open in a separate extension tab.
 - **Keyboard shortcut.** `Alt+Shift+M` opens Drift; customize it at `chrome://extensions/shortcuts`. Chrome may leave it unassigned if another extension already uses it.
 - **Copy a draft.** Take your text elsewhere, including drafts too long for a share URL.
-- **Welcome and help.** Setup, instructions, local release notes, GitHub changelog, help, and optional donation links in one place.
+- **Welcome and help.** Setup, instructions, release notes, GitHub changelog, help, and optional donation links in one place.
 - **Light and dark themes.** Follows the system/browser preference; keyboard navigation and reduced-motion support.
 
 ## Privacy and permissions
@@ -86,9 +86,9 @@ See [SUPPORT.md](SUPPORT.md), [CHANGELOG.md](CHANGELOG.md), [developer reference
 
 ## Support development
 
-[GitHub Sponsors](https://github.com/sponsors/kylereddoch) · [Ko-fi](https://ko-fi.com/kylereddoch) · [Buy Me a Coffee](https://www.buymeacoffee.com/kylereddoch)
+[Ko-fi](https://ko-fi.com/kylereddoch) · [Buy Me a Coffee](https://www.buymeacoffee.com/kylereddoch) · [GitHub Sponsors](https://github.com/sponsors/kylereddoch)
 
-The repository’s funding configuration matches Kyle’s existing projects. Publishing the repository and verifying the Sponsor button are separate release steps. The planned repository is `https://github.com/kylereddoch/drift`; its help and changelog links become available after the first push.
+The repository’s Sponsor button uses these same funding destinations. Donations are optional; all extension features are available without payment.
 
 ## License
 
