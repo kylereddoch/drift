@@ -130,6 +130,8 @@
   #data-status:empty { display:none; }
   .site-footer { display:flex; justify-content:space-between; gap:20px; font-size:10px; color:var(--muted); padding:25px 0 35px; border-top:1px solid var(--line); }
   .site-footer a { color:var(--muted); }
+  .maker-credit { display:flex; justify-content:flex-end; padding:0 0 32px; }
+  .maker-credit .makermap-badge img { width:220px; }
   .popup-root { width:430px; height:600px; }
   .popup { width:430px; min-width:340px; background:var(--surface); }
   .composer { padding:18px 23px 13px; }

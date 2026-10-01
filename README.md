@@ -13,7 +13,7 @@ The site uses GitHub’s domain, with no custom domain or DNS changes. It does n
 
 ## Work on the site
 
-No package installation or build step is needed. Edit `index.html`, `privacy.html`, and `assets/styles.css`. Branding is packaged locally; there is no browser extension API code in the website. Tinylytics is the only externally hosted script.
+No package installation or build step is needed. Edit `index.html`, `privacy.html`, and `assets/styles.css`. Branding is packaged locally; there is no browser extension API code in the website. The homepage loads Tinylytics and the MakerMap badge as externally hosted scripts; the privacy page loads only Tinylytics.
 
 For a local preview with Node.js 24 or later:
 
