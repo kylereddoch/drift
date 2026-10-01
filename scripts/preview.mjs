@@ -5,7 +5,7 @@ import { resolve, extname } from 'node:path';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml; charset=utf-8' };
-const publicFiles = new Set(['index.html', 'privacy.html', 'assets/styles.css', 'assets/drift.svg', 'assets/drift-128.png', 'robots.txt', 'sitemap.xml']);
+const publicFiles = new Set(['index.html', 'privacy.html', 'assets/styles.css', 'assets/drift.svg', 'assets/drift-128.png', 'assets/chrome-web-store-badge.png', 'robots.txt', 'sitemap.xml']);
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url, 'http://127.0.0.1:4174');

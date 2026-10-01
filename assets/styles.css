@@ -37,6 +37,8 @@
   .button-secondary { background:var(--surface); color:var(--ink); border-color:var(--line); }
   .button-secondary:hover:enabled,.button-secondary[href]:hover { background:var(--soft); }
   .button-small { padding:8px 12px; }
+  .store-badge { display:inline-block; max-width:100%; vertical-align:middle; }
+  .store-badge img { display:block; width:206px; max-width:100%; height:auto; }
   .link-button { border:0; padding:4px 0; background:none; color:var(--accent); font-size:12px; text-align:left; text-decoration:underline; text-underline-offset:4px; }
   .pill { padding:3px 10px; border:1px solid var(--line); border-radius:30px; background:var(--surface); color:var(--accent); font-size:11px; font-weight:700; letter-spacing:0; }
   .field-label { display:block; font-size:13px; font-weight:680; margin-bottom:9px; }
