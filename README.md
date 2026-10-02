@@ -23,6 +23,18 @@ node scripts/preview.mjs
 
 Open `http://127.0.0.1:4174/`. The preview serves the site at the domain root, matching the custom domain.
 
+## Search and social previews
+
+Both public pages include unique titles and descriptions, HTTPS canonical URLs, index/follow directives, Open Graph metadata, and large-image Twitter/X cards. The shared social image is `assets/og-drift.png` (1200 × 630); editable artwork is in `assets/social-card.html`, which is marked `noindex`. Render that artwork at exactly 1200 × 630 with a device scale factor of 1 when changing the PNG. Keep the image dimensions, MIME type, alt text, and absolute HTTPS URL in both pages synchronized.
+
+JSON-LD identifies the website, each page, Kyle Reddoch as the author, and the homepage’s software application. The application version describes the published store release, so it stays at 1.0.0 until the 1.0.1 update is published. Free pricing, installation links, features, and requirements must continue to match the visible site and extension. Ratings and reviews are omitted because no verified review content is displayed on this site; this markup does not claim eligibility for Google’s software-app rich result, which requires a rating or review.
+
+`robots.txt` points to the HTTPS sitemap. `sitemap.xml` lists only the homepage and privacy page; update each `lastmod` only when that page changes. The custom `404.html` returns a real 404 for missing URLs and is marked `noindex`. The artwork source and error page are excluded from the sitemap.
+
+For search-engine submission, use `https://drift.kylereddoch.me/sitemap.xml` in the verified Google Search Console or Bing Webmaster Tools property. No account verification, sitemap submission, or search indexing is implied by deploying these files.
+
+References: [Open Graph](https://ogp.me/), [Google site names](https://developers.google.com/search/docs/appearance/site-names), [software application structured data](https://developers.google.com/search/docs/appearance/structured-data/software-app).
+
 ## Publish changes
 
 Commit reviewed website changes on `gh-pages` and push that branch. GitHub Pages deploys the branch root. `.nojekyll` keeps this a plain static site.

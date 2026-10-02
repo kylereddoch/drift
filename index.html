@@ -1,13 +1,140 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Drift — Share to Mastodon</title><meta name="description" content="Highlight a passage, add your thoughts, and share it to Mastodon. Drift brings your selected text, the article title, and its link into one editable draft."><link rel="canonical" href="https://drift.kylereddoch.me/"><meta property="og:title" content="Drift — Share to Mastodon"><meta property="og:description" content="Highlight a passage, add your thoughts, and share it to Mastodon. Drift brings your selected text, the article title, and its link into one editable draft."><meta property="og:type" content="website"><meta property="og:url" content="https://drift.kylereddoch.me/"><link rel="icon" type="image/svg+xml" href="assets/drift.svg"><link rel="icon" type="image/png" sizes="128x128" href="assets/drift-128.png"><link rel="stylesheet" href="assets/styles.css"><script src="https://tinylytics.app/embed/4pKqZQnKtz8i-yQCyZmX.js?events&amp;beacon" defer></script></head>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drift — Share to Mastodon | Free Chrome Extension</title>
+  <meta name="description" content="Share articles and highlighted passages to Mastodon with Drift, a free, open-source Chrome extension. Edit your draft and publish from your own server.">
+  <meta name="author" content="Kyle Reddoch">
+  <meta name="application-name" content="Drift">
+  <meta name="theme-color" content="#2755d8">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://drift.kylereddoch.me/">
+  <link rel="sitemap" type="application/xml" href="https://drift.kylereddoch.me/sitemap.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Drift">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Drift — Share to Mastodon | Free Chrome Extension">
+  <meta property="og:description" content="Share articles and highlighted passages to Mastodon with Drift, a free, open-source Chrome extension. Edit your draft and publish from your own server.">
+  <meta property="og:url" content="https://drift.kylereddoch.me/">
+  <meta property="og:image" content="https://drift.kylereddoch.me/assets/og-drift.png">
+  <meta property="og:image:secure_url" content="https://drift.kylereddoch.me/assets/og-drift.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Drift — A good find. Share to Mastodon. A highlighted passage beside the blue Drift quote logo.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drift — Share to Mastodon | Free Chrome Extension">
+  <meta name="twitter:description" content="Share articles and highlighted passages to Mastodon with Drift, a free, open-source Chrome extension. Edit your draft and publish from your own server.">
+  <meta name="twitter:image" content="https://drift.kylereddoch.me/assets/og-drift.png">
+  <meta name="twitter:image:alt" content="Drift — A good find. Share to Mastodon. A highlighted passage beside the blue Drift quote logo.">
+  <link rel="icon" type="image/svg+xml" href="/assets/drift.svg">
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/drift-128.png">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://drift.kylereddoch.me/#website",
+      "url": "https://drift.kylereddoch.me/",
+      "name": "Drift",
+      "alternateName": "Drift — Share to Mastodon",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://kylereddoch.me/#person"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://drift.kylereddoch.me/#webpage",
+      "url": "https://drift.kylereddoch.me/",
+      "name": "Drift — Share to Mastodon | Free Chrome Extension",
+      "description": "Share articles and highlighted passages to Mastodon with Drift, a free, open-source Chrome extension. Edit your draft and publish from your own server.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://drift.kylereddoch.me/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://drift.kylereddoch.me/#social-image"
+      },
+      "dateModified": "2026-10-02",
+      "author": {
+        "@id": "https://kylereddoch.me/#person"
+      },
+      "mainEntity": {
+        "@id": "https://drift.kylereddoch.me/#extension"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kylereddoch.me/#person",
+      "name": "Kyle Reddoch",
+      "url": "https://kylereddoch.me/"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://drift.kylereddoch.me/#social-image",
+      "url": "https://drift.kylereddoch.me/assets/og-drift.png",
+      "contentUrl": "https://drift.kylereddoch.me/assets/og-drift.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "Drift — A good find. Share to Mastodon. A highlighted passage beside the blue Drift quote logo."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://drift.kylereddoch.me/#extension",
+      "name": "Drift — Share to Mastodon",
+      "alternateName": "Drift",
+      "url": "https://drift.kylereddoch.me/",
+      "description": "Share articles and highlighted passages to Mastodon with Drift, a free, open-source Chrome extension. Edit your draft and publish from your own server.",
+      "applicationCategory": "BrowserApplication",
+      "applicationSubCategory": "Mastodon sharing extension",
+      "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+      "softwareRequirements": "Google Chrome 120 or later; a Mastodon server supporting the /share composer.",
+      "softwareVersion": "1.0.0",
+      "isAccessibleForFree": true,
+      "license": "https://github.com/kylereddoch/drift/blob/main/LICENSE",
+      "installUrl": "https://chromewebstore.google.com/detail/gfngoampnddkablfoplbllkdcfkifnij",
+      "downloadUrl": "https://chromewebstore.google.com/detail/gfngoampnddkablfoplbllkdcfkifnij",
+      "image": "https://drift.kylereddoch.me/assets/og-drift.png",
+      "author": {
+        "@id": "https://kylereddoch.me/#person"
+      },
+      "publisher": {
+        "@id": "https://kylereddoch.me/#person"
+      },
+      "sameAs": [
+        "https://github.com/kylereddoch/drift",
+        "https://chromewebstore.google.com/detail/gfngoampnddkablfoplbllkdcfkifnij"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://chromewebstore.google.com/detail/gfngoampnddkablfoplbllkdcfkifnij"
+      },
+      "featureList": [
+        "Share selected passages with the page title and link",
+        "Edit drafts before opening the Mastodon composer",
+        "Save multiple Mastodon servers",
+        "Remove common link tracking parameters",
+        "Copy drafts and share from the right-click menu"
+      ]
+    }
+  ]
+}
+  </script>
+  <script src="https://tinylytics.app/embed/4pKqZQnKtz8i-yQCyZmX.js?events&amp;beacon" defer></script>
+</head>
 <body class="welcome">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="page-shell">
     <header class="site-header"><a class="brand" href="./" aria-label="Drift home"><img src="assets/drift.svg" width="38" height="38" alt=""><span>drift<span class="brand-dot">.</span></span></a><nav aria-label="Main"><a id="nav-guide" href="#guide" data-tinylytics-event="navigation.section" data-tinylytics-event-value="guide">How it works</a><a id="nav-help" href="#help" data-tinylytics-event="navigation.section" data-tinylytics-event-value="help">Help</a><a id="nav-github" href="https://github.com/kylereddoch/drift" target="_blank" rel="noopener noreferrer" data-tinylytics-event="link.github" data-tinylytics-event-value="header">GitHub <span aria-hidden="true">↗</span></a><a id="nav-support" class="support-nav" href="#support" data-tinylytics-event="navigation.section" data-tinylytics-event-value="support"><span aria-hidden="true">♡</span> Support Drift</a></nav></header>
     <main id="main">
       <section class="hero" aria-labelledby="welcome-heading">
-        <div class="hero-copy"><div class="hero-kicker"><span class="pill">v1.0.0</span><span>A SMALL TOOL FOR THE OPEN WEB</span></div><h1 id="welcome-heading">A good find.<br>A new <em>conversation.</em></h1><p class="hero-description">An article worth reading. A passage that stays with you. Send it to Mastodon with Drift, and make it part of the conversation.</p><a id="install-hero" class="store-badge" href="https://chromewebstore.google.com/detail/gfngoampnddkablfoplbllkdcfkifnij" target="_blank" rel="noopener noreferrer" data-tinylytics-event="install.open" data-tinylytics-event-value="hero"><img src="assets/chrome-web-store-badge.png" width="340" height="96" alt="Available in the Chrome Web Store — install Drift"></a><p class="hero-footnote">Your server. Your words. Your final say.</p><p class="download-status">Available now in the Chrome Web Store.</p></div>
+        <div class="hero-copy"><div class="hero-kicker"><span class="pill">v1.0.0</span><span>A SMALL TOOL FOR THE OPEN WEB</span></div><h1 id="welcome-heading">A good find.<br>A new <em>conversation.</em></h1><p class="hero-description">Drift is a free, open-source Chrome extension for sharing articles and highlighted passages to Mastodon. Add your thoughts and make a good find part of the conversation.</p><a id="install-hero" class="store-badge" href="https://chromewebstore.google.com/detail/gfngoampnddkablfoplbllkdcfkifnij" target="_blank" rel="noopener noreferrer" data-tinylytics-event="install.open" data-tinylytics-event-value="hero"><img src="assets/chrome-web-store-badge.png" width="340" height="96" alt="Available in the Chrome Web Store — install Drift"></a><p class="hero-footnote">Your server. Your words. Your final say.</p><p class="download-status">Available now in the Chrome Web Store.</p></div>
         <div class="hero-art" aria-label="Example: a highlighted passage becomes an editable Mastodon draft">
           <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
           <div class="sample-card"><div class="sample-top"><span class="sample-avatar">d.</span><span>Something worth sharing<small>From your browser, with a little context.</small></span><span class="sample-dots" aria-hidden="true">•••</span></div><div class="sample-content"><blockquote><mark>“Sometimes the most useful thing you can do with a good idea is share it.”</mark></blockquote><p class="sample-title">The web is better when we pass things along.</p><p class="sample-url">example.com/a-good-find <span aria-hidden="true">↗</span></p></div><div class="sample-bottom"><span class="sample-check" aria-hidden="true">✓</span> Your highlight, the title, and the link.</div></div>

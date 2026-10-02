@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Drift social image artwork</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+    body { background: #f7f8fc; color: #17213b; font-family: "Segoe UI", Arial, sans-serif; }
+    .canvas { position: relative; width: 1200px; height: 630px; padding: 56px 68px; }
+    .brand { display: flex; align-items: center; gap: 14px; font-size: 46px; font-weight: 760; letter-spacing: -2px; }
+    .brand img { width: 56px; height: 56px; }
+    .brand span span { color: #2755d8; }
+    .category { position: absolute; right: 68px; top: 76px; color: #5d667b; font-size: 15px; font-weight: 650; letter-spacing: 2px; }
+    h1 { position: absolute; left: 68px; top: 158px; margin: 0; font-size: 70px; line-height: 1.12; font-weight: 750; letter-spacing: -3px; }
+    h1 span { color: #2755d8; }
+    .description { position: absolute; left: 72px; top: 351px; margin: 0; color: #5d667b; font-size: 26px; line-height: 1.5; }
+    .orbit { position: absolute; left: 804px; top: 169px; width: 310px; height: 300px; border: 2px solid #dce4fa; border-radius: 50%; transform: rotate(-20deg); }
+    .orbit.second { left: 840px; top: 162px; width: 255px; height: 319px; transform: rotate(23deg); }
+    .quote-card { position: absolute; left: 803px; top: 202px; width: 331px; padding: 31px 26px 25px; background: #fff; border: 1px solid #dce2ed; border-radius: 19px; transform: rotate(-5deg); box-shadow: 0 22px 45px #1c335515; }
+    .quote-card .label { color: #5d667b; font-size: 12px; font-weight: 700; letter-spacing: 1.8px; }
+    blockquote { margin: 22px 0 25px; font-size: 27px; line-height: 1.45; font-weight: 620; letter-spacing: -.5px; }
+    mark { background: #edf2b3; color: #17213b; box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 1px 4px; }
+    .card-footer { border-top: 1px solid #e5e9f2; padding-top: 17px; font-size: 15px; color: #2755d8; }
+    .footer { position: absolute; left: 72px; right: 72px; bottom: 43px; border-top: 1px solid #dce2ed; padding-top: 23px; display: flex; justify-content: space-between; align-items: center; font-size: 19px; }
+    .footer .url { font-weight: 650; }
+    .footer .note { color: #5d667b; }
+  </style>
+</head>
+<body>
+  <main class="canvas">
+    <div class="brand"><img src="drift.svg" alt=""><span>drift<span>.</span></span></div>
+    <div class="category">FREE &amp; OPEN SOURCE</div>
+    <h1>A good find.<br><span>Share to Mastodon.</span></h1>
+    <p class="description">Highlight a passage. Add your thoughts.<br>Take the conversation to your people.</p>
+    <div class="orbit"></div><div class="orbit second"></div>
+    <div class="quote-card"><div class="label">WORTH PASSING ALONG</div><blockquote><mark>The web is better<br>when we share<br>what we find.</mark></blockquote><div class="card-footer">Your highlight. Your words. ↗</div></div>
+    <div class="footer"><span class="url">drift.kylereddoch.me</span><span class="note">A Chrome extension for Mastodon</span></div>
+  </main>
+</body>
+</html>

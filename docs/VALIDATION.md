@@ -37,4 +37,16 @@ GitHub Pages and the repository homepage are configured for `drift.kylereddoch.m
 - Both pages have the expected canonical and Open Graph URLs. Their existing Tinylytics embeds remain included once per page; synthetic checks did not execute external scripts.
 - Unknown paths and non-public files return 404. `git diff --check` passed.
 
-Hover DNS and GitHub certificate provisioning must complete before the public HTTPS URL can be verified. The Hover record is `CNAME`, hostname `drift`, target `kylereddoch.github.io`, with the default TTL.
+Hover DNS subsequently resolved with `CNAME`, hostname `drift`, target `kylereddoch.github.io`. GitHub approved the certificate and HTTPS enforcement was enabled. The public homepage and updated privacy page returned HTTP 200 with normal certificate validation; HTTP redirects to HTTPS.
+
+## Search and social metadata — October 2, 2026
+
+Both pages now include page-specific titles/descriptions, canonical URLs, robots directives, complete Open Graph image metadata, large-image Twitter/X cards, and JSON-LD. The homepage identifies the published 1.0.0 extension and its free price; no ratings or reviews were invented. Google software-app rich-result eligibility is not asserted.
+
+- Parsed metadata checks found one canonical and one value per metadata key, with consistent page titles, descriptions, HTTPS URLs, image references, and JSON-LD identifiers.
+- The 84,858-byte social PNG is 1200 × 630, served as `image/png`. Its editable artwork is marked `noindex`.
+- Local page, asset, and navigation requests succeeded. Sitemap entries and robots references match the custom domain. A nested missing URL returned HTTP 404 with the custom error page and `noindex`.
+- Browser checks found no page errors. Homepage accessibility checks passed 21 rules in each theme; privacy checks passed 12 rules in each theme, with no WCAG A/AA violations. Both pages fit a 390px viewport without horizontal overflow.
+- The social image and desktop page were visually inspected. External scripts were replaced with empty responses for the final automated checks, keeping those checks out of website analytics.
+
+Search-engine crawling, indexing, rich-result display, and third-party social-preview caches are outside these local checks.
