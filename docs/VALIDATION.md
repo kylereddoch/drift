@@ -28,3 +28,13 @@ Drift's public Chrome Web Store listing was verified as version 1.0.0, offered b
 - The browser reported no page or console errors during the collector-script checks. The privacy page and README describe website click tracking and distinguish clicks from completed installs, donations, and posts.
 
 These checks apply to the website. No extension source, permissions, or release package changed.
+
+## Custom domain — October 2, 2026
+
+GitHub Pages and the repository homepage are configured for `drift.kylereddoch.me`. The website’s `CNAME`, canonical and Open Graph URLs, robots sitemap reference, and sitemap entries use the custom domain. The local preview now serves the domain root.
+
+- Local HTTP checks returned 200 for the homepage, privacy page, all linked local assets, robots file, and sitemap. Privacy-page and return links resolve from the root.
+- Both pages have the expected canonical and Open Graph URLs. Their existing Tinylytics embeds remain included once per page; synthetic checks did not execute external scripts.
+- Unknown paths and non-public files return 404. `git diff --check` passed.
+
+Hover DNS and GitHub certificate provisioning must complete before the public HTTPS URL can be verified. The Hover record is `CNAME`, hostname `drift`, target `kylereddoch.github.io`, with the default TTL.

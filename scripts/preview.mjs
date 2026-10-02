@@ -9,12 +9,11 @@ const publicFiles = new Set(['index.html', 'privacy.html', 'assets/styles.css', 
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url, 'http://127.0.0.1:4174');
-    if (url.pathname === '/' || url.pathname === '/drift') { response.writeHead(302, { Location: '/drift/' }); return response.end(); }
-    const path = decodeURIComponent(url.pathname).replace(/^\/drift\//, '') || 'index.html';
+    const path = decodeURIComponent(url.pathname).replace(/^\//, '') || 'index.html';
     if (!publicFiles.has(path)) { response.writeHead(404); return response.end('Page not found'); }
     const body = await readFile(resolve(root, path));
     response.writeHead(200, { 'Content-Type': types[extname(path)], 'Cache-Control': 'no-store' });
     response.end(body);
   } catch { response.writeHead(404); response.end('Page not found'); }
 });
-server.listen(4174, '127.0.0.1', () => console.log('Drift website preview: http://127.0.0.1:4174/drift/'));
+server.listen(4174, '127.0.0.1', () => console.log('Drift website preview: http://127.0.0.1:4174/'));

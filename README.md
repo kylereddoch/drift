@@ -2,14 +2,14 @@
 
 The public website for [Drift — Share to Mastodon](https://github.com/kylereddoch/drift), using the approved extension design and Rising quotes logo.
 
-**Website:** https://kylereddoch.github.io/drift/
+**Website:** https://drift.kylereddoch.me/
 
 This checkout is separate from the extension on disk. Both belong to the `kylereddoch/drift` GitHub project:
 
 - `main`: extension source, tests, and releases, locally in `D:\Github Repos\drift`.
 - `gh-pages`: this static website, locally in `D:\Github Repos\drift-website`.
 
-The site uses GitHub’s domain, with no custom domain or DNS changes. It does not use the `drift.github.io` hostname, which belongs to the GitHub account named `drift`.
+The site uses the custom domain `drift.kylereddoch.me`, recorded in `CNAME` and the repository’s GitHub Pages settings. In Hover, add a `CNAME` record with hostname `drift` and target `kylereddoch.github.io`, using the default TTL. The target is only a hostname, without a scheme or repository path. Once DNS resolves and GitHub issues the certificate, enable **Enforce HTTPS** in the repository’s Pages settings.
 
 ## Work on the site
 
@@ -21,7 +21,7 @@ For a local preview with Node.js 24 or later:
 node scripts/preview.mjs
 ```
 
-Open `http://127.0.0.1:4174/drift/`. The preview uses the same `/drift/` base path as GitHub Pages.
+Open `http://127.0.0.1:4174/`. The preview serves the site at the domain root, matching the custom domain.
 
 ## Publish changes
 

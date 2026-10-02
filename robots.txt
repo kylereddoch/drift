@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://kylereddoch.github.io/drift/sitemap.xml
+Sitemap: https://drift.kylereddoch.me/sitemap.xml
