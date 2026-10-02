@@ -1,7 +1,8 @@
 // Public project and support destinations.
 export const PROJECT = 'https://github.com/kylereddoch/drift';
 export const LINKS = Object.freeze({
-  website: 'https://kylereddoch.me/?utm_source=drift&utm_medium=extension',
+  website: 'https://drift.kylereddoch.me/?utm_source=drift&utm_medium=extension',
+  author: 'https://kylereddoch.me/?utm_source=drift&utm_medium=extension',
   github: PROJECT,
   changelog: `${PROJECT}/blob/main/CHANGELOG.md`,
   help: `${PROJECT}/issues/new/choose`,

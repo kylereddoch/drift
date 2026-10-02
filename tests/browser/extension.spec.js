@@ -210,14 +210,17 @@ test('welcome and composer are accessible in both themes and narrow layouts', as
 });
 
 test('support links are discoverable and website attribution requires a click without draft data', async () => {
-  const website = 'https://kylereddoch.me/?utm_source=drift&utm_medium=extension';
+  const website = 'https://drift.kylereddoch.me/?utm_source=drift&utm_medium=extension';
+  const author = 'https://kylereddoch.me/?utm_source=drift&utm_medium=extension';
+  const websitePrivacy = 'https://drift.kylereddoch.me/privacy.html?utm_source=drift&utm_medium=extension';
   const requests = [];
   const record = request => {
-    if (/^https:\/\/(?:www\.)?kylereddoch\.me\//.test(request.url()) || new URL(request.url()).hostname === 'tinylytics.app') requests.push(request);
+    if (/^https:\/\/(?:(?:www|drift)\.)?kylereddoch\.me\//.test(request.url()) || new URL(request.url()).hostname === 'tinylytics.app') requests.push(request);
   };
-  const mockWebsite = route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Website navigation test</title><h1>Local stand-in for Kyle’s website</h1>' });
+  const mockWebsite = route => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>Website navigation test</title><h1>Local stand-in for the linked website</h1>' });
   context.on('request', record);
   await context.route('https://kylereddoch.me/**', mockWebsite);
+  await context.route('https://drift.kylereddoch.me/**', mockWebsite);
   const page = await context.newPage();
   try {
     await page.goto(`${base}/welcome.html`);
@@ -228,31 +231,47 @@ test('support links are discoverable and website attribution requires a click wi
     await expect(card.getByRole('link', { name: 'Sponsor on GitHub' })).toHaveAttribute('href', 'https://github.com/sponsors/kylereddoch');
     await expect(card.getByRole('link', { name: 'Leave a tip on Ko-fi' })).toHaveAttribute('href', 'https://ko-fi.com/kylereddoch');
     for (const link of await page.locator('[data-link="website"]').all()) await expect(link).toHaveAttribute('href', website);
+    await expect(page.getByRole('link', { name: 'Kyle Reddoch', exact: true })).toHaveAttribute('href', author);
+    expect(await worker.evaluate(() => chrome.runtime.getManifest().homepage_url)).toBe('https://drift.kylereddoch.me/');
     expect(requests).toEqual([]);
     const fromWelcome = context.waitForEvent('page');
-    await page.locator('.site-footer').getByRole('link', { name: 'Kyle Reddoch' }).click();
+    await page.locator('.site-footer').getByRole('link', { name: 'Drift website' }).click();
     const visit = await fromWelcome;
     await visit.waitForURL(website);
     await visit.close();
+    const fromAuthor = context.waitForEvent('page');
+    await page.getByRole('link', { name: 'Kyle Reddoch', exact: true }).click();
+    const authorVisit = await fromAuthor;
+    await authorVisit.waitForURL(author);
+    await authorVisit.close();
 
     const id = '00000000-0000-4000-8000-000000000008';
     await worker.evaluate(async id => chrome.storage.session.set({ [`draft:context:${id}`]: { source: { title: 'Private draft title', selection: 'Do not send this to the developer', url: 'https://news.example/private?secret=123' } } }), id);
     await page.goto(`${base}/popup.html?draft=${id}`);
     await expect(page.getByRole('textbox', { name: 'Post text' })).toHaveValue(/Do not send this to the developer/);
     await expect(page.getByRole('link', { name: 'Support Drift' })).toHaveAttribute('href', 'welcome.html#support');
-    await expect(page.getByRole('link', { name: 'By Kyle Reddoch' })).toHaveAttribute('href', website);
-    expect(requests).toHaveLength(1);
+    await expect(page.getByRole('link', { name: 'Drift website' })).toHaveAttribute('href', website);
+    expect(requests).toHaveLength(2);
     const fromPopup = context.waitForEvent('page');
-    await page.getByRole('link', { name: 'By Kyle Reddoch' }).click();
+    await page.getByRole('link', { name: 'Drift website' }).click();
     const popupVisit = await fromPopup;
     await popupVisit.waitForURL(website);
     await popupVisit.close();
-    expect(requests.map(request => request.url())).toEqual([website, website]);
+    await page.goto(`${base}/privacy.html`);
+    await expect(page.getByRole('link', { name: 'Drift website privacy policy', exact: true })).toHaveAttribute('href', websitePrivacy);
+    await expect(page.getByRole('link', { name: 'Kyle’s personal website privacy policy', exact: true })).toHaveAttribute('href', 'https://kylereddoch.me/privacy/?utm_source=drift&utm_medium=extension');
+    const fromPrivacy = context.waitForEvent('page');
+    await page.getByRole('link', { name: 'Drift website privacy policy', exact: true }).click();
+    const privacyVisit = await fromPrivacy;
+    await privacyVisit.waitForURL(websitePrivacy);
+    await privacyVisit.close();
+    expect(requests.map(request => request.url())).toEqual([website, author, website, websitePrivacy]);
     for (const request of requests) expect(request.headers().referer).toBeUndefined();
   } finally {
     await page.close();
     context.off('request', record);
     await context.unroute('https://kylereddoch.me/**', mockWebsite);
+    await context.unroute('https://drift.kylereddoch.me/**', mockWebsite);
   }
 });
 

@@ -1,12 +1,18 @@
-# Drift 1.0.0 — Chrome Web Store upload guide
+# Drift 1.0.1 — Chrome Web Store upload guide
 
-Prepared September 29, 2026. This is an upload kit, not confirmation of submission or approval.
+Prepared October 2, 2026. This is an upload kit, not confirmation of submission or approval.
 
 ## Upload the extension
 
-In the developer dashboard, choose **Add new item** and upload **drift-1.0.0.zip** from this folder. The ZIP contains only the extension and its license. Keep the artwork and this guide outside the uploaded extension ZIP.
+In the developer dashboard, open the existing **Drift — Share to Mastodon** item (`gfngoampnddkablfoplbllkdcfkifnij`), select **Package → Upload New Package**, and upload **drift-1.0.1.zip** from this folder. The ZIP contains only the extension and its license. Keep the artwork and this guide outside the uploaded extension ZIP.
 
 ## Store listing
+
+### Changes in 1.0.1
+
+Updated Drift’s website links to `drift.kylereddoch.me`, added clearly labeled website links in the popup and welcome page, and updated website privacy links. The author credit still links to Kyle’s personal site. Permissions and Mastodon sharing behavior are unchanged.
+
+Before submitting, confirm that the homepage and privacy-policy URLs below load over HTTPS. GitHub Pages certificate provisioning depends on the Hover DNS record being active. Update both URL fields in the existing listing, then submit the new package for review. See [Chrome’s update instructions](https://developer.chrome.com/docs/webstore/update).
 
 **Name (from the manifest):** Drift — Share to Mastodon
 
@@ -47,7 +53,7 @@ Privacy and permissions
 
 Drift reads the page title, URL, and selected text only when you invoke it. Server preferences stay in local extension storage. Drafts use temporary session storage and are cleared when their source tab closes, Chrome restarts, or the extension reloads. Opening your server's composer sends the draft to that server in an HTTPS URL before publication; it can appear in browser history and server logs.
 
-There is no advertising, background browsing collection, or usage analytics inside the extension. Links to the maintainer's website carry fixed Drift referral tags after a click, without including the article URL or draft.
+There is no advertising, background browsing collection, or usage analytics inside the extension. Links to the Drift website and the maintainer's personal website carry fixed Drift referral tags after a click, without including the article URL or draft.
 
 Permissions are limited to temporary access to the selected tab, reading highlighted text, saving preferences and drafts, and adding right-click actions. All extension code is bundled locally.
 

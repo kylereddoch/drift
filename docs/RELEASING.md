@@ -23,21 +23,21 @@ For subsequent previews, run the checks, push the reviewed commit, confirm its h
 
 See [GitHub’s sponsor-button guide](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository).
 
-## Chrome Web Store submission (1.0.0 prepared)
+## Chrome Web Store update (1.0.1 prepared)
 
-The owner requested store submission on September 29, 2026. The upload bundle is in `dist/chrome-web-store-1.0.0/`; regenerate it with `npm run store` after `npm run verify`. Use [STORE-LISTING.md](STORE-LISTING.md) for the listing, privacy declarations, permission explanations, artwork mapping, and reviewer instructions.
+The owner requested an updated extension package on October 2, 2026. Version 1.0.1 updates the Drift website links and privacy disclosures for `drift.kylereddoch.me`. The upload bundle is in `dist/chrome-web-store-1.0.1/`; regenerate it with `npm run store` after `npm run verify`. Use [STORE-LISTING.md](STORE-LISTING.md) for the listing, privacy declarations, permission explanations, artwork mapping, and reviewer instructions.
 
-The browser-control tool refused access to the developer dashboard with "The extensions gallery cannot be scripted." The upload and submission therefore require manual dashboard interaction. No store item ID, review submission, or approval has been confirmed. This is a tool limitation, not a missing authorization from the owner.
+Upload `drift-1.0.1.zip` to the existing item `gfngoampnddkablfoplbllkdcfkifnij` through **Package → Upload New Package**, and update the homepage and privacy-policy URLs in its listing. Confirm that both new URLs load over HTTPS before submitting. Version 1.0.1 is prepared for the owner to submit; its review and publication status have not been confirmed.
 
 Review the current [publish guide](https://developer.chrome.com/docs/webstore/publish) and [program policies](https://developer.chrome.com/docs/webstore/program-policies/) at submission time.
 
 - Use a registered Chrome Web Store developer account. Enter account-specific verification and legal declarations using the owner's actual details.
 - Upload the verified ZIP and prepare accurate screenshots, the required store artwork, category, language, and support URL. The public privacy policy is `https://drift.kylereddoch.me/privacy.html`; keep it synchronized with the packaged policy.
-- Complete the Privacy practices fields truthfully: Drift handles website content, URLs, selected text, and user-edited drafts locally and transmits a draft to the chosen Mastodon server on command. Author-website links also carry static Drift source tags for the website’s Tinylytics analytics after a click. “No extension usage analytics” does not mean “no data handling.”
+- Complete the Privacy practices fields truthfully: Drift handles website content, URLs, selected text, and user-edited drafts locally and transmits a draft to the chosen Mastodon server on command. Project and author website links also carry static Drift source tags for website analytics after a click. “No extension usage analytics” does not mean “no data handling.”
 - Explain each permission using README’s table. Single purpose: prepare and hand off a user-selected page or passage to Mastodon.
 - Confirm no remotely hosted code, hidden features, or broader website access has been added.
 - Verify current store requirements and name/branding availability before submission. An abstract working name does not establish exclusive rights.
-- Submit for review when authorized by the owner (authorized for this first submission). A packaged ZIP is not Chrome Web Store approval or publication.
+- The owner will submit this update for review. A packaged ZIP is not Chrome Web Store approval or publication.
 
 ## Store listing draft
 

@@ -1,6 +1,6 @@
 {
   "name": "drift-mastodon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Share a page, a passage, a good find. A privacy-conscious Mastodon sharing extension.",
   "type": "module",

@@ -18,7 +18,7 @@ Share uses the server’s `/share` route with one URL-encoded `text` parameter c
 
 ## Website referral attribution
 
-The maintainer’s website is `https://kylereddoch.me/`. Its live redirect to `https://www.kylereddoch.me/` was checked on September 29, 2026 and preserves the query string. The live page already loads Tinylytics. Extension author links carry the fixed `utm_source=drift` and `utm_medium=extension` parameters; the website receives them only when a person clicks.
+The maintainer’s website is `https://kylereddoch.me/`. Its live redirect to `https://www.kylereddoch.me/` was checked on September 29, 2026 and preserves the query string. The live page already loads Tinylytics. The Drift website is `https://drift.kylereddoch.me/`. Extension website and author links carry the fixed `utm_source=drift` and `utm_medium=extension` parameters; the website receives them only when a person clicks.
 
 [Tinylytics’ analytics guide](https://tinylytics.app/docs/analytics_guide) documents UTM-tagged links for source/campaign attribution. Look for `drift` in Tinylytics’ traffic source reporting. A visit being attributed is subject to the website script loading, blockers, and the service’s normal filtering. A live dashboard entry has not been asserted during development.
 

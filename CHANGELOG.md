@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.1 — 2026-10-02 (Chrome Web Store update package)
+
+### Changed
+
+- Pointed the extension homepage and the welcome-page and popup website links to `https://drift.kylereddoch.me/`.
+- Kept the welcome-page author credit linked to Kyle’s personal website.
+- Updated the website privacy links and referral disclosures for the new domain.
+
+Permissions and sharing behavior are unchanged. This package is prepared for review; submission and publication of 1.0.1 have not been confirmed.
+
 ## 1.0.0 — 2026-09-29 (Chrome Web Store submission build)
 
 ### Changed

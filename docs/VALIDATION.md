@@ -1,5 +1,13 @@
 # Validation
 
+## 1.0.1 — website link update
+
+Validated October 2, 2026. `npm run verify` and `npm run store` passed with 10 logic tests and 7 browser tests. The browser checks cover the manifest homepage, actual clicks from the welcome page and popup to the new Drift website, the separate author link, and the website privacy link. Navigation was intercepted locally; requests carried only fixed referral tags, no draft content or referrer, and no website requests occurred before a click.
+
+The accessibility checks and toolbar-popup size checks passed. Updated welcome-page and real toolbar-popup screenshots were visually inspected. Public and packaged website-attribution disclosures match.
+
+The upload ZIP is `dist/chrome-web-store-1.0.1/drift-1.0.1.zip`: 19 files, 26,289 bytes, SHA-256 `fd51e59110c6a5a05e2064ad537b5b5086e1c5eb4cbd6701970020a1669927d1`. Every archived file matches its source; the manifest is at the ZIP root. Permissions match the preceding version. This verifies the package, not Chrome Web Store submission or approval. Public HTTPS must be working before submission.
+
 ## 1.0.0 — Chrome Web Store submission build
 
 Validated September 29, 2026 on Windows using the existing Node.js 24 / Playwright 1.63.0 toolchain.
