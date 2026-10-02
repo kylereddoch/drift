@@ -17,7 +17,7 @@ Published September 29, 2026: [kylereddoch/drift](https://github.com/kylereddoch
 - Sponsorships are enabled with Kyle’s GitHub Sponsors, Ko-fi, and Buy Me a Coffee destinations, matching existing projects. GitHub confirmed the account already has a Sponsors listing.
 - GitHub Issues and private vulnerability reporting are enabled.
 - The first hosted Linux verification run passed: [Verify Drift](https://github.com/kylereddoch/drift/actions/runs/36603828920).
-- The website uses `gh-pages`, checked out separately at `D:\Github Repos\drift-website`, and GitHub Pages at `https://kylereddoch.github.io/drift/`. No custom domain is configured.
+- The website uses `gh-pages`, checked out separately at `D:\Github Repos\drift-website`, and GitHub Pages at `https://drift.kylereddoch.me/`. The custom domain is recorded in the website’s `CNAME` file and GitHub Pages settings. Hover’s `drift` CNAME must point to `kylereddoch.github.io`; HTTPS enforcement requires a provisioned GitHub Pages certificate.
 
 For subsequent previews, run the checks, push the reviewed commit, confirm its hosted verification run, and attach the generated ZIP to a matching prerelease tag. The development scripts do not push or publish automatically.
 
@@ -32,7 +32,7 @@ The browser-control tool refused access to the developer dashboard with "The ext
 Review the current [publish guide](https://developer.chrome.com/docs/webstore/publish) and [program policies](https://developer.chrome.com/docs/webstore/program-policies/) at submission time.
 
 - Use a registered Chrome Web Store developer account. Enter account-specific verification and legal declarations using the owner's actual details.
-- Upload the verified ZIP and prepare accurate screenshots, the required store artwork, category, language, and support URL. The public privacy policy is `https://kylereddoch.github.io/drift/privacy.html`; keep it synchronized with the packaged policy.
+- Upload the verified ZIP and prepare accurate screenshots, the required store artwork, category, language, and support URL. The public privacy policy is `https://drift.kylereddoch.me/privacy.html`; keep it synchronized with the packaged policy.
 - Complete the Privacy practices fields truthfully: Drift handles website content, URLs, selected text, and user-edited drafts locally and transmits a draft to the chosen Mastodon server on command. Author-website links also carry static Drift source tags for the website’s Tinylytics analytics after a click. “No extension usage analytics” does not mean “no data handling.”
 - Explain each permission using README’s table. Single purpose: prepare and hand off a user-selected page or passage to Mastodon.
 - Confirm no remotely hosted code, hidden features, or broader website access has been added.

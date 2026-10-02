@@ -16,11 +16,11 @@ In the developer dashboard, choose **Add new item** and upload **drift-1.0.0.zip
 
 **Language:** English
 
-**Homepage URL:** https://kylereddoch.github.io/drift/
+**Homepage URL:** https://drift.kylereddoch.me/
 
 **Support URL:** https://github.com/kylereddoch/drift/issues
 
-**Privacy policy URL:** https://kylereddoch.github.io/drift/privacy.html
+**Privacy policy URL:** https://drift.kylereddoch.me/privacy.html
 
 **Mature content:** No. Drift supplies no mature content; users choose what to share.
 

@@ -6,7 +6,7 @@ Share a page, a passage, a good find.
 
 Drift is an independent Chrome extension by [Kyle Reddoch](https://kylereddoch.me/). It is not affiliated with Mastodon. Version 1.0.0 is prepared for Chrome Web Store submission; submission and approval have not yet been confirmed.
 
-[Website](https://kylereddoch.github.io/drift/) · [Download the developer preview](https://github.com/kylereddoch/drift/releases/tag/v0.1.2) · [Privacy policy](https://kylereddoch.github.io/drift/privacy.html)
+[Website](https://drift.kylereddoch.me/) · [Download the developer preview](https://github.com/kylereddoch/drift/releases/tag/v0.1.2) · [Privacy policy](https://drift.kylereddoch.me/privacy.html)
 
 ## Try the developer preview
 
